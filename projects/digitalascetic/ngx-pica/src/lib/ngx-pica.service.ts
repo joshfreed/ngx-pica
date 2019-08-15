@@ -100,7 +100,7 @@ export class NgxPicaService {
                         .then((imgResized: File) => {
                             resizedImage.next(imgResized);
                         });
-                });
+                }).catch(err => resizedImage.error(err));
             };
 
             img.src = window.URL.createObjectURL(file);
